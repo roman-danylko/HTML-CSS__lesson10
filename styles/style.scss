@@ -1,0 +1,107 @@
+@import "base/base";
+
+body {
+  background: rgb(238, 122, 76);
+  z-index: -100;
+  font-family: sans-serif;
+}
+
+.box {
+  width: 100%;
+  margin-top: 10%;
+  background-color: cornflowerblue;
+  display: flex;
+}
+
+.social {
+  max-width: 400px;
+  width: 100px;
+  height: 40vh;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+  &:hover {
+    width: 400px;
+  }
+  &:hover .social__logo {
+    left: -100px;
+  }
+  &:hover .social__logo2 {
+    left: 0;
+  }
+  &__text {
+    width: 300px;
+    height: 100%;
+    background: #ffffff;
+    transition: all 0.3s;
+    position: absolute;
+    z-index: 20;
+    left: 100px;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h4 {
+      text-transform: uppercase;
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+.social + .social {
+  margin-left: 1px;
+}
+
+.social__logo {
+  width: 100px;
+  height: 100%;
+  background-color: rgb(100, 187, 237);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  z-index: 30;
+  transition: all ease-in-out 0.3s;
+  img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.social__logo2 {
+  @extend .social__logo;
+  left: 100px;
+  z-index: 10;
+  img {
+    width: 60px;
+    height: 60px;
+  }
+  &_dribbble {
+    background-color: rgb(228, 52, 87);
+  }
+  &_telegram {
+    background-color: rgb(37, 40, 82);
+  }
+  &_youtube {
+    background-color: rgb(255, 25, 25);
+  }
+  &_instagram {
+    background-color: rgb(28, 146, 58);
+  }
+  &_linkedin {
+    background-color: rgb(31, 128, 207);
+  }
+  &_facebook {
+    background-color: rgb(57, 74, 230);
+  }
+  &_twitter {
+    background-color: rgb(57, 190, 230);
+  }
+}
